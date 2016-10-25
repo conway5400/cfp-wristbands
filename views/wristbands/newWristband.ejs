@@ -1,0 +1,61 @@
+<% include ../partials/header %>
+
+<div class="container">
+    <div class="row">
+        <div class="col-xs-12">
+            <h3 class="text-center">Enter your wristband number below to get started. Click "Submit" when done.</h3>
+        </div>
+    </div>
+    <form id="newWristbandForm" action="/api/wristbands" method="POST">
+        <div class="form-group">
+            <label for="rfidNumberInput">Enter your wristband number</label>
+            <input type="text" name="rfidNumber" class="form-control" id="rfidNumberInput" placeholder="Wristband #">
+        </div>
+        <div class="form-group">
+            <button id="wristbandSubmitButton" class="btn btn-normal">Submit</button>
+        </div>
+    </form>
+    
+    <form id="newProfileForm" action="/api/wristbands" method="POST">
+        <input type="text" name="rfidNumber" id="rfidNumberField" hidden>
+        <div class="form-group row">
+            <div class="col-xs-6">
+                <label for="firstNameInput">First Name</label>
+                <input type="text" name="profile[firstName]" class="form-control" id="firstNameInput" placeholder="First Name">
+            </div>
+            <div class="col-xs-6">
+                <label for="lastNameInput">Last Name</label>
+                <input type="text" name="profile[lastName]" class="form-control" id="lastNameInput" placeholder="Last Name">
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="cellNumberInput">Cell Number</label>
+            <input type="tel" name="profile[cellNumber]" class="form-control" id="cellNumberInput" placeholder="Cell Number">
+        </div>        
+        <div class="form-group row">
+            <div class="col-xs-6">
+                <label for="cellNumberInput">PIN #</label>
+                <input type="password" name="profile[pinNumber]" class="form-control" aria-describedby="pinNumberHelp" id="pinNumberInput" placeholder="Enter PIN #">
+                <small id="pinNumberHelp" class="form-text text-muted">Enter a secret 4-6 digit PIN number.</small>
+            </div>
+            <div class="col-xs-6">
+                <label for="cellNumberInput">Re-enter PIN #</label>
+                <input type="password" class="form-control" id="pinNumberInputMatch" placeholder="Re-Enter PIN #">
+            </div>
+        </div>
+        <div class="form-check">
+            <label class="form-check-label">
+            <input class="form-check-input" name="profile[textUpdates]" type="checkbox" value="1">
+            Check here to receive text updates.
+            </label>
+        </div>
+        <div class="form-group">
+            <button class="btn btn-normal">Save!</button>
+        </div>
+    </form>
+</div>
+
+<script src="../js/newWristbandJS.js" type="text/javascript"></script>
+
+<% include ../partials/footer %>
