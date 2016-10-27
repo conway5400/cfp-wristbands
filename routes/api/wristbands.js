@@ -13,6 +13,8 @@ router.put('/', function(req, res) {
 //GET - check if wristband exists
 router.get("/", function(req, res){
     
+    console.log("GET WRISTBAND HIT");
+    
     console.log(req.query);
 
     var response = String;

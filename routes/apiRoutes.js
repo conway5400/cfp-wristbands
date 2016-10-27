@@ -10,7 +10,8 @@ router.use('/profiles', profileAPIRoutes);
      
 //INDEX - get all units
 router.get("/", function(req, res){
-
+    
+    console.log("home hit");
     res.send("home api route hit");    
 
 });

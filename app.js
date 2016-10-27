@@ -38,5 +38,5 @@ app.get("/clearAllData", function(req, res){
 
 //server listen - GCloud
 app.listen((process.env.PORT || 8080), function() {
-  console.log('I\'m Listening...');
+  console.log('I\'m Listening on 8080...');
 });
