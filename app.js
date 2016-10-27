@@ -31,7 +31,12 @@ app.get("/clearAllData", function(req, res){
     });
 });
 
-//server listen
-app.listen(process.env.PORT, process.env.IP, function() {
-    console.log("CFP Wristbands are Now Live!");
+// //server listen
+// app.listen(process.env.PORT, process.env.IP, function() {
+//     console.log("CFP Wristbands are Now Live!");
+// });
+
+//server listen - GCloud
+app.listen(8080, function() {
+    console.log("CFP Wristbands are Now Live on port 8080!");
 });
