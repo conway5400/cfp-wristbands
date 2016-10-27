@@ -7,7 +7,23 @@ var mongoose            =   require("mongoose"),
     clearAllData        =   require('./clearAllData.js'),
     app                 =   express();
     
-mongoose.connect('mongodb://localhost:27017/cfp-wristbands');
+
+var options = { server: { socketOptions: { keepAlive: 300000, connectTimeoutMS: 30000 } }, 
+                replset: { socketOptions: { keepAlive: 300000, connectTimeoutMS : 30000 } } };       
+ 
+var mongodbUri = 'mongodb://conway5400:father7662@ds021915.mlab.com:21915/cfp-wristbands';
+ 
+mongoose.connect(mongodbUri, options);
+var conn = mongoose.connection;             
+ 
+conn.on('error', console.error.bind(console, 'connection error:'));  
+ 
+conn.once('open', function() {
+  console.log("connection success!");                         
+});
+
+    
+// mongoose.connect('mongodb://localhost:27017/cfp-wristbands');
 
 app.use(express.static("public"));
 app.set("view engine", "ejs");
@@ -31,12 +47,7 @@ app.get("/clearAllData", function(req, res){
     });
 });
 
-// //server listen
-// app.listen(process.env.PORT, process.env.IP, function() {
-//     console.log("CFP Wristbands are Now Live!");
-// });
-
-//server listen - GCloud
+//server listen
 app.listen((process.env.PORT || 8080), function() {
   console.log('I\'m Listening on 8080...');
 });
