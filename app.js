@@ -7,8 +7,8 @@ var mongoose            =   require("mongoose"),
     clearAllData        =   require('./clearAllData.js'),
     app                 =   express();
     
-mongoose.connect("mongodb://conway5400:father7662@ds021915.mlab.com:21915/cfp-wristbands");
-    
+mongoose.connect('mongodb://localhost:27017/cfp-wristbands');
+
 app.use(express.static("public"));
 app.set("view engine", "ejs");
 app.use(bodyParser.urlencoded({extended: true}));
