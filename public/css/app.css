@@ -19,7 +19,6 @@ h2 {
     
 }
 
-
 .homeOptions {
 
     padding-top: 5px;
@@ -43,13 +42,16 @@ h2 {
 
 a { color: inherit; } 
 
-a:hover 
-{
+a:hover {
      color:#00A0C6; 
      text-decoration:none; 
      cursor:pointer;  
 }
 
 form input {
+    color: black;
+}
+
+button {
     color: black;
 }

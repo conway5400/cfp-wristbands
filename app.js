@@ -1,13 +1,13 @@
 var mongoose            =   require("mongoose"),
     express             =   require("express"),
     bodyParser          =   require("body-parser"),
-    methodOverride   =   require("method-override"),
+    methodOverride      =   require("method-override"),
     apiRoutes           =   require('./routes/apiRoutes.js'),
     wristbandRoutes     =   require('./routes/wristbandRoutes.js'),
     clearAllData        =   require('./clearAllData.js'),
     app                 =   express();
     
-mongoose.connect("mongodb://localhost/cfp");
+mongoose.connect("mongodb://conway5400:father7662@ds021915.mlab.com:21915/cfp-wristbands");
     
 app.use(express.static("public"));
 app.set("view engine", "ejs");
