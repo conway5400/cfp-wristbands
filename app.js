@@ -37,6 +37,6 @@ app.get("/clearAllData", function(req, res){
 // });
 
 //server listen - GCloud
-app.listen(8080, function() {
-    console.log("CFP Wristbands are Now Live on port 8080!");
+app.listen((process.env.PORT || 8080), function() {
+  console.log('I\'m Listening...');
 });
